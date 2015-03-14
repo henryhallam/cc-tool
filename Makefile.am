@@ -31,3 +31,5 @@ cc_tool_SOURCES=src/main.cpp src/application/cc_flasher.cpp src/application/cc_b
 		src/programmer/cc_243x.cpp src/programmer/cc_programmer.cpp \
 		src/programmer/cc_unit_driver.cpp src/programmer/cc_unit_info.cpp
 
+udevrulesdir = $(udev_scripts_dir)/udev/rules.d
+udevrules_DATA = udev/90-cc-debugger.rules

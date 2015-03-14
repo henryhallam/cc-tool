@@ -8,6 +8,12 @@ AC_CONFIG_MACRO_DIR([m4])
 AC_PROG_LIBTOOL
 AC_PROG_CXX
 
+AC_ARG_WITH([udev-scripts-dir],
+            AS_HELP_STRING([--with-udev-scripts-dir=<path>],
+                           [Use a given path for udev scripts]),
+            [udev_scripts_dir=$withval], [udev_scripts_dir=/lib])
+AC_SUBST([udev_scripts_dir])
+
 BOOST_REQUIRE([1.39])
 BOOST_PROGRAM_OPTIONS([mt])
 BOOST_SYSTEM([mt])
