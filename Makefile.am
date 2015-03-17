@@ -1,6 +1,8 @@
 ACLOCAL_AMFLAGS = -I m4
 man_MANS = man/cc-tool.1
 
+MAINTAINERCLEANFILES = compile
+
 AM_CPPFLAGS = $(LIBUSB_CFLAGS) $(BOOST_CPPFLAGS) -O3 -Isrc/programmer -Isrc/common -Isrc/usb -Isrc -Isrc/application
 AM_LDFLAGS = \
 	$(BOOST_FILESYSTEM_LDFLAGS) \
@@ -33,3 +35,4 @@ cc_tool_SOURCES=src/main.cpp src/application/cc_flasher.cpp src/application/cc_b
 
 udevrulesdir = $(udev_scripts_dir)/udev/rules.d
 udevrules_DATA = udev/90-cc-debugger.rules
+-include $(top_srcdir)/git.mk

@@ -376,6 +376,7 @@ top_srcdir = @top_srcdir@
 udev_scripts_dir = @udev_scripts_dir@
 ACLOCAL_AMFLAGS = -I m4
 man_MANS = man/cc-tool.1
+MAINTAINERCLEANFILES = compile
 AM_CPPFLAGS = $(LIBUSB_CFLAGS) $(BOOST_CPPFLAGS) -O3 -Isrc/programmer -Isrc/common -Isrc/usb -Isrc -Isrc/application
 AM_LDFLAGS = \
 	$(BOOST_FILESYSTEM_LDFLAGS) \
@@ -889,6 +890,7 @@ distclean-generic:
 maintainer-clean-generic:
 	@echo "This command is intended for maintainers to use"
 	@echo "it deletes files that may require special tools to rebuild."
+	-test -z "$(MAINTAINERCLEANFILES)" || rm -f $(MAINTAINERCLEANFILES)
 clean: clean-am
 
 clean-am: clean-binPROGRAMS clean-generic clean-libtool mostlyclean-am
@@ -984,6 +986,7 @@ uninstall-man: uninstall-man1
 	uninstall-binPROGRAMS uninstall-man uninstall-man1 \
 	uninstall-udevrulesDATA
 
+-include $(top_srcdir)/git.mk
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.
