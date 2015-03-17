@@ -72,7 +72,7 @@ before erasing target (secondary) mac address is read out and will be written ba
 erase flash memory completely and reset lock bits
 .
 .TP
-.B \-w, \-\-write file_name[,offset] 
+.B \-w, \-\-write <file_name>[:hex|bin[:<offset>]]
 write specified file into flash memory. Optional offset value (in decimal) is an absolute target flash 
 address and supported only for binary files. Option
 .I --write
@@ -145,16 +145,16 @@ specify target flash size in kilobytes. This option is required for any actions 
 .SH SUPPORTED FILE FORMATS
 Supported image file formats are Intel hex or binary. Format will be determined automatically by file extention (hex or bin)
 or my be specified explicitly by adding 
-.I ,bin
+.I :bin
 or
-.I ,hex
+.I :hex
 after file name. See EXAMPLES section.
 .
 .SH EXAMPLES
 .TP
 Read entire flash into binary file image.xxx
 .B cc-tool
--r image.xxx,bin
+-r image.xxx:bin
 .TP
 Erase flash, write intel hex file image.hex and verify flash using default method
 .B cc-tool
@@ -162,7 +162,7 @@ Erase flash, write intel hex file image.hex and verify flash using default metho
 .TP
 Merge file image.hex and patch.bin (at offset 80), write resulting image, verify flash using read method
 .B cc-tool
--v read -w image.hex --write patch.bin,80
+-v read -w image.hex --write patch.bin:bin:80
 .TP
 Set debug lock bit
 .B cc-tool
