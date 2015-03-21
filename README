@@ -1,5 +1,9 @@
-#### cc-tool version 0.26
-cc-tool provides support for Texas Instruments CC Debugger
+#### cc-tool version 0.26.2
+cc-tool provides support for Texas Instruments CC Debugger for programming
+Texas Instruments CC25xx, CC24xx and CC11xx RF system-on-chip microcontrollers.
+
+This version includes some fixes and updates made beyond the last "official"
+release.
 
 #### Project home:
 http://sourceforge.net/projects/cctool/
@@ -19,7 +23,7 @@ from non-privileged accounts. Copy it to /etc/udev/rules.d
 
 #### Support:
 Send bug/build problem reports, new feature or new chip support suggestions 
-to george-u@yandex.com  
+to george-u@yandex.com or henry@pericynthion.org
 
 If you found a bug try to reproduce it with command line option --log and
 send the log file along with problem description
